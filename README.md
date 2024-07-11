@@ -1,4 +1,8 @@
 Loan Approval Prediction with NB, KNN, and LR
+
+
+
+
 This repository contains the code, documentation, and resources for the project titled "Loan Approval Prediction with NB, KNN, and LR." This project leverages machine learning methodologies to improve the loan approval process using Naive Bayes (NB), K-Nearest Neighbors (KNN), and Logistic Regression (LR) algorithms.
 
 Table of Contents
