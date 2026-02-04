@@ -94,3 +94,21 @@ Tejaswini, J., et al. "Accurate loan approval prediction based on machine learni
 Karthiban, R. M. Ambika and K. E. Kannammal, "A Review on Machine Learning Classification Technique for Bank Loan Approval," 2019 International Conference on Computer Communication and Informatics (ICCCI), pp. 1-6, 2019, doi: 10.1109/ICCCI.2019.8822014.
 Y. Shi and P. Song, "Improvement Research on the Project Loan Evaluation of Commercial Bank Based on the Risk Analysis," 2017 10th International Symposium on Computational Intelligence and Design (ISCID), Hangzhou, 2017, pp. 3-6.doi: 10.1109/ISCID.2017.60.
 For further details, please refer to the project documentation and code provided in this repository.
+
+Job Portal ETL Tool
+This repository now includes a lightweight ETL utility (`job_etl.py`) that collects job listings from public APIs/RSS feeds, normalizes them, and loads them into CSV, JSONL, or SQLite outputs.
+See `JOB_ETL_README.md` for a focused guide on using the ETL tool.
+
+Features
+- Extracts from Remotive, RemoteOK, and WeWorkRemotely public endpoints.
+- Filters to matching job titles and only keeps roles opened in the last 24 hours.
+- Normalizes fields such as title, company, location, tags, date posted, and descriptions.
+- Loads to SQLite with a composite primary key to prevent duplicates.
+
+Usage
+- Run all sources and store in SQLite (default): `python job_etl.py --titles "data scientist,backend engineer"`
+- Select sources and write CSV: `python job_etl.py --sources remotive,remoteok --titles "product manager,ml engineer" --format csv --output jobs.csv`
+- Write JSONL: `python job_etl.py --sources weworkremotely --titles "frontend" --format jsonl --output jobs.jsonl`
+
+Notes
+- Always review each job portal's terms of service before extracting data.
